@@ -84,6 +84,7 @@ function search(city) {
 	let apiKey = '2b354ee10180a8ec5f31e475798a3953';
 	let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 	axios.get(apiUrl).then(displayTemperature);
+	axios.get(apiUrl).then(convertFahrenheit);
 }
 
 function handleSubmit(event) {
@@ -95,4 +96,4 @@ function handleSubmit(event) {
 let form = document.querySelector('#search-form');
 form.addEventListener('submit', handleSubmit);
 
-search('New York');
+search('London');
